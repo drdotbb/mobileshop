@@ -1,7 +1,7 @@
 {% extends "base.html" %} {%block content%}
 
 <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
-    <div class="card">
+    <div class="card" style="position: relative; top: 150px; width: 40%;">
         <div class="p-5 top">
             <div class="d-flex flex-column mb-3">
                 <p class="h1">Customer Info</p>
@@ -19,7 +19,7 @@
         </div>
     </div>
     
-    <div class="card p-5">
+    <div class="card p-5" style="position: relative; top: 100px;">
         <div class="d-flex justify-content-between align-items-center top">
             <div class="d-flex">
                 <h6>
@@ -47,13 +47,13 @@
             </div>
         </div>
         <div class="d-flex justify-content-between align-items-center top">
-            <img class="icon" src="static/images/icons8-broken-phone-64.png" />
+            <img class="icon" src="{{url_for('static', filename='images/icons8-broken-phone-64.png')}}" />
             <p class="fw-bold">Order Received</p>
-            <img class="icon" src="static/images/icons8-gears-64.png" />
+            <img class="icon" src="{{url_for('static', filename='images/icons8-gears-64.png')}}" />
             <p class="fw-bold">Working On Order</p>
-            <img class="icon" src="static/images/icons8-touchscreen-64.png" />
+            <img class="icon" src="{{url_for('static', filename='images/icons8-touchscreen-64.png')}}" />
             <p class="fw-bold">Final Touch</p>
-            <img class="icon" src="static/images/icons8-cell-phone-64.png" />
+            <img class="icon" src="{{url_for('static', filename='images/icons8-cell-phone-64.png')}}" />
             <p class="fw-bold">Order Completed</p>
         </div>
     </div>

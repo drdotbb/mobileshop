@@ -33,16 +33,13 @@
         />
 
         <title>{%block title %} {%endblock%}</title>
-    </head>
-
-    <body>
         <nav class="nav">
             <div class="d-flex justify-content-start w-100">
                 <div class="logo">
-                    <a href="/"><p class="display-5">Mobile Snap</p></a>
+                    <a href="/track"><p class="display-5">Mobile Snap</p></a>
                 </div>
                 <div class="ms-auto d-flex align-items-center nav-links">
-                    <a href="#"><p class="h3">Services</p></a>
+                   
                     <a href="/contact"><p class="h3">Contact</p></a>
                 </div>
                 <span class="navTrigger">
@@ -51,13 +48,21 @@
                 </span>
             </div>
         </nav>
+    </head>
+
+    <body>
+        
+
+       
+
         <div
             style="padding-top: 100px"
             class="d-flex flex-column justify-content-start h-100"
-        >
+        >   
             {%block content%} {%endblock%}
+           
             <footer class="mt-auto">
-                <div class="footer-dark">
+                <div class="footer-dark" >
                     <div class="px-5">
                         <div class="row justify-content-between">
                             <div class="col-sm-6 col-md-3 item">

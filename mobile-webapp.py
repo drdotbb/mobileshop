@@ -86,9 +86,20 @@ def updateFixable():
     cur.execute(updateFixableQuery, (newFixable,customerID))
     mysql.connection.commit()
 
+@app.route("/track",methods = ['POST', 'GET'])
+def track():
+    if request.method == 'POST':
+        customer_trackingid=request.form['tracking']
+        print(customer_trackingid)
+        return redirect(url_for('home',name=customer_trackingid))
+    
+    else:
 
-@app.route("/")
-def home():
+        return render_template("track.html")
+
+        
+@app.route('/status/<name>')
+def home(name):
     customerKeys = (
         
         "firstName",
@@ -116,7 +127,10 @@ def home():
     customer = [
         (customerKeys[i], customerValues[i]) for i, _ in enumerate(customerKeys)
     ]
-    return render_template("status.html", customer=customer, steps=[1, 1, 1, 0])
+    return render_template("status.html", customer=customer, steps=[1, 1, 1, 0], url=name)
+
+
+        
 
 @app.route("/update",methods = ['POST', 'GET'])
 def shop_update():
@@ -127,12 +141,14 @@ def shop_update():
         estimate = request.form['fixtime']
         fixable = request.form['fixable']
         delete_id=request.form['del-id']
-        return render_template("update.html") , 
+        return render_template("update.html") 
     
     else:
-       
-        
-        return render_template("update.html") , print("kir")
+        customer_id = request.args.get('id')
+        customer_id = request.args.get('fixtime')
+        customer_id = request.args.get('fixable')
+        customer_id = request.args.get('del-id')
+        return render_template("update.html") 
   
 
 
@@ -141,14 +157,17 @@ def shop_update():
 
 
 
-@app.route("/contact")
+@app.route("/contact", methods=['POST','GET'])
 def test():
-    return render_template("contact.html")
+    if request.method == 'POST':
+        return 'hel'
+
+    else:
+        return render_template("contact.html") 
+   
 
 
-@app.route("/contact/post")
-def contact_post():
-    return
+
 
 
 if __name__ == "__main__":
