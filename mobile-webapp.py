@@ -86,6 +86,8 @@ def updateFixable():
     cur.execute(updateFixableQuery, (newFixable,customerID))
     mysql.connection.commit()
 
+
+@app.route("/")
 @app.route("/track",methods = ['POST', 'GET'])
 def track():
     if request.method == 'POST':
@@ -158,9 +160,16 @@ def shop_update():
 
 
 @app.route("/contact", methods=['POST','GET'])
-def test():
+def comtact():
     if request.method == 'POST':
-        return 'hel'
+        contact_fname = request.form['fname']
+        contact_lname = request.form['lname']
+        contact_email = request.form['email']
+        contact_city=request.form['city']
+        contact_state = request.form['state']
+        contact_feedback = request.form['feedback']
+        return render_template("contact.html") 
+        
 
     else:
         return render_template("contact.html") 
