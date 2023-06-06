@@ -1,0 +1,50 @@
+{% extends "base.html" %}{%block content%}
+<div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+   <div class="card">
+       <div class="p-5 top">
+           <div class="d-flex flex-column mb-3">
+               <p class="h1">Update From</p>
+           </div>
+           <div class="d-flex flex-wrap">
+               <form
+                   class="row g-3 needs-validation"
+                   action="http://127.0.0.1:5000/update"
+                   method="post"
+                   
+               >
+               <p>Enter Customer ID:</p>
+               <p><input type = "text" name = "id" /></p>
+
+               <p>Update Estimated Fix Time:</p>
+               <p><input type = "text" name = "fixtime" /></p>
+
+               
+               <p>Update Fixable:</p>
+               <p><input type = "text" name = "fixable" /></p>    
+                   
+               <p>Delete Customer ID:</p>
+               <p><input type = "text" name = "del-id" /></p>   
+                   
+                   <div class="col-12">
+                       <button class="btn btn-primary" type="submit">
+                           Submit 
+                       </button>
+                   </div>
+               </form>
+           </div>
+       </div>
+   </div>
+</div>
+
+
+     
+ 
+
+
+
+
+
+
+
+
+{%endblock%}
